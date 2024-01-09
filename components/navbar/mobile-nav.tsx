@@ -46,7 +46,7 @@ export const MobileNav = (props: MobileNavProps) => {
                 </div>
                 <SheetFooter>
                     <SheetClose asChild>
-                        <Button>Close</Button>
+                        <Button className="w-full">Close</Button>
                     </SheetClose>
                 </SheetFooter>
             </SheetContent>
