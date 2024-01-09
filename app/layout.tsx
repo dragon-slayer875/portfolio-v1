@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { fontSans } from "./fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
-import MainNav from "@/components/main-nav";
-
-export const fontSans = FontSans({
-    subsets: ["latin"],
-    variable: "--font-sans",
-});
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -27,7 +22,14 @@ export default function RootLayout({
                     fontSans.variable
                 )}
             >
+                <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange>
+                
                 {children}
+                </ThemeProvider>
             </body>
         </html>
     );
