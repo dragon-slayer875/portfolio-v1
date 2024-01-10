@@ -5,11 +5,11 @@ import { ThemeToggle } from "../ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
 const links = [
-    { name: "Home", link: "/" },
-    { name: "Skills", link: "#skills" },
-    { name: "Projects", link: "#projects" },
-    { name: "About", link: "#about" },
-    { name: "Contact", link: "#contact" },
+    { name: "Home", link: "#Home" },
+    { name: "Skills", link: "#Skills" },
+    { name: "Projects", link: "#Projects" },
+    { name: "About", link: "#About" },
+    { name: "Contact", link: "#Contact" },
 ];
 
 type NavProps = {
