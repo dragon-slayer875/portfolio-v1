@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Index from "@/sections";
 import Nav from "@/components/navbar/nav";
 import { useRef, useEffect, useState } from "react";
@@ -26,19 +26,17 @@ export default function Home() {
                 threshold: 0.5,
             }
         );
-            sections.forEach(section => {
-                if (section.current) {
-                    observer.observe(section.current);
-                }
-            });
+        sections.forEach((section) => {
+            if (section.current) {
+                observer.observe(section.current);
+            }
+        });
     }, []);
 
     return (
         <>
-        <Nav isVis={isVis} />
-        <div className="grid">
+            <Nav isVis={isVis} />
             <Index ref={home} />
-        </div>
         </>
     );
 }
