@@ -2,27 +2,41 @@ import React from "react";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "../ui/theme-toggle";
+import { cn } from "@/lib/utils";
 
 const links = [
-    { id: 1, name: "Home", link: "/" },
-    { id: 2, name: "Skills", link: "/skills" },
-    { id: 3, name: "Projects", link: "/projects" },
-    { id: 4, name: "About", link: "/about" },
-    { id: 5, name: "Contact", link: "/contact" },
+    { name: "Home", link: "/" },
+    { name: "Skills", link: "#skills" },
+    { name: "Projects", link: "#projects" },
+    { name: "About", link: "#about" },
+    { name: "Contact", link: "#contact" },
 ];
 
-const Nav = () => {
+type NavProps = {
+    isVis: string;
+};
+
+const Nav = (NavProps: any) => {
     return (
-        <nav className="sticky top-0 p-5 flex justify-between items-center shadow-lg border-primary border-2">
+        <nav
+            className={cn(
+                "fixed z-50 top-0 p-5 w-[100dvw] flex justify-between items-center"
+            )}
+        >
             <div>
                 <h1 className="font-black text-4xl sm:text-4xl">Rt</h1>
             </div>
-            <div className="hidden md:flex gap-1">
-                {links.map((link) => (
+            <div className="hidden md:grid grid-flow-col grid-cols-5 justify-items-center jus items-center gap-1">
+                {links.map((link, index) => (
                     <Link
-                        key={link.id}
+                        key={index}
                         href={link.link}
-                        className="font-medium p-2 text-lg"
+                        className={`font-medium w-full px-3 mx-1 hover:shadow-[0_0_0_0.1rem_hsl(var(primary))] shadow-primary text-lg text-center rounded-3xl transition-300
+                        ${
+                            NavProps.isVis === link.name
+                                ? "bg-primary text-background"
+                                : ""
+                        }`}
                     >
                         {link.name}
                     </Link>
@@ -33,7 +47,7 @@ const Nav = () => {
                 <MobileNav links={links} />
             </div>
             <div className="hidden md:flex gap-1">
-            <ThemeToggle />
+                <ThemeToggle />
             </div>
         </nav>
     );

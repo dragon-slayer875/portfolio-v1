@@ -1,6 +1,3 @@
-
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,7 +12,7 @@ import {
 
 const GenericHamburgerLine = () => {
     return <div className=" h-1 w-7 rounded bg-primary" />;
-}
+};
 
 type MobileNavProps = {
     links: any[];
@@ -27,19 +24,26 @@ export const MobileNav = (props: MobileNavProps) => {
             <SheetTrigger asChild>
                 <Button className="p-2" variant={"ghost"}>
                     <div className="flex flex-col gap-1 justify-center items-center">
-                    <GenericHamburgerLine />
-                    <GenericHamburgerLine />
-                    <GenericHamburgerLine />
+                        <GenericHamburgerLine />
+                        <GenericHamburgerLine />
+                        <GenericHamburgerLine />
                     </div>
                 </Button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col justify-between" side={"right"}>
+            <SheetContent
+                className="flex flex-col justify-between"
+                side={"right"}
+            >
                 <SheetHeader>
                     <SheetTitle>Navigation</SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col items-end tall:h-full tall:py-20 tall:justify-between">
-                    {props.links.map((link) => (
-                        <Link key={link.id} href={link.link} className="font-bold p-5 text-4xl">
+                    {props.links.map((link, index) => (
+                        <Link
+                            key={index}
+                            href={link.link}
+                            className="font-bold p-5 text-4xl text-primary"
+                        >
                             {link.name}
                         </Link>
                     ))}
@@ -52,4 +56,4 @@ export const MobileNav = (props: MobileNavProps) => {
             </SheetContent>
         </Sheet>
     );
-}
+};
