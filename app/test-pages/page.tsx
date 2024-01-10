@@ -36,7 +36,7 @@ export default function Home() {
     return (
         <>
         <Nav isVis={isVis} />
-        <div className="flex flex-col ">
+        <div className="grid">
             <Index ref={home} />
         </div>
         </>
