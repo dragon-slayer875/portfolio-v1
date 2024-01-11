@@ -7,7 +7,7 @@ const Index = forwardRef(function (_props, ref) {
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
             id="Home"
-            className="p-12 md:p-24 h-dvh flex items-center"
+            className="p-1 md:p-24 h-dvh flex items-center"
         >
             <div className="container mx-auto">
                 <div className="lg:max-xl:p-4 flex flex-col lg:!flex-row-reverse justify-between items-center gap-14">
@@ -16,7 +16,7 @@ const Index = forwardRef(function (_props, ref) {
                         height={400}
                         src="/portrait.png"
                         alt="Portrait, Rudraksh Tyagi"
-                        className="object-cover w-[45dvw] md:w-[40dvw] lg:w-[30dvw] xl:max-w-[25dvw] h-auto aspect-square shadow-[-1.5rem_1.5rem_0_0_hsl(var(--primary))]"
+                        className="object-cover w-[55dvw] md:w-[40dvw] lg:w-[30dvw] xl:max-w-[25dvw] h-auto aspect-square shadow-[-1.5rem_1.5rem_0_0_hsl(var(--primary))]"
                     />
                     <div className="text-center flex flex-col gap-1 lg:gap-6 lg:text-left lg:max-w-[40dvw]">
                         <div className="text-xl md:text-2xl text-foreground">

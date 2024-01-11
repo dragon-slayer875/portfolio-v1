@@ -57,7 +57,7 @@ export function ContactForm() {
                         <FormItem>
                             <FormLabel className="text-2xl">Name</FormLabel>
                             <FormControl>
-                                <Input placeholder="shadcn" {...field} />
+                                <Input placeholder="Your Name" {...field} />
                             </FormControl>
                         </FormItem>
                     )}
