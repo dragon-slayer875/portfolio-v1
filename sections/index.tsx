@@ -9,7 +9,7 @@ const Index = forwardRef(function (_props, ref) {
             id="Home"
             className="p-12 md:p-24 h-dvh flex items-center"
         >
-            <div className="container mx-auto ]">
+            <div className="container mx-auto">
                 <div className="lg:max-xl:p-4 flex flex-col lg:!flex-row-reverse justify-between items-center gap-14">
                     <Image
                         width={400}

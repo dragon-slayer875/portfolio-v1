@@ -5,19 +5,24 @@ import { Separator } from "@/components/ui/separator";
 
 const Contact = forwardRef(function (props, ref) {
     return (
-        <section>
-            <div
-                ref={ref as React.RefObject<HTMLDivElement> | null}
-                id="Contact"
-                className="bg-secondary p-10 flex flex-col lg:!flex-row gap-2 items-center justify-center"
-            >
-                <h1 className="text-4xl font-bold text-foreground flex items-center gap-3">
-                    Let's Talk
-                    <Hand size={30}></Hand>
-                </h1>
-                <Separator orientation="vertical" className="bg-primary w-8" />
-                <div className="w-full m-10 lg:max-w-[50dvw]">
-                    <ContactForm />
+        <section
+            ref={ref as React.RefObject<HTMLDivElement> | null}
+            id="Contact"
+            className="p-12 md:p-24 bg-secondary items-center"
+        >
+            <div className="mx-auto container">
+                <div className="grid lg:grid-flow-col lg:grid-cols-3 items-center justify-items-center gap-4">
+                    <h1 className="items-center text-4xl font-bold text-foreground flex gap-3">
+                        Let's Talk
+                        <Hand size={30}></Hand>
+                    </h1>
+                    <Separator
+                    orientation="vertical"
+                       className="mx-4 h-full flex-1 bg-primary"
+                    />
+                    <div className="w-full lg:max-w-[50dvw]">
+                        <ContactForm />
+                    </div>
                 </div>
             </div>
         </section>
