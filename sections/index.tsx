@@ -9,7 +9,7 @@ const Index = forwardRef(function (_props, ref) {
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
             id="Home"
-            className="p-1 md:p-24 min-h-dvh flex items-center"
+            className="p-1 md:p-24 min-h-dvh flex items-center relative"
         >
             <div className="container mx-auto">
                 <div className="lg:max-xl:p-4 flex flex-col lg:!flex-row-reverse justify-between items-center gap-14">
@@ -38,7 +38,7 @@ const Index = forwardRef(function (_props, ref) {
                     </div>
                 </div>
                 <div className="flex justify-center items-center mt-8">
-                <ArrowDown className="absolute left-2/4 bottom-10 animate-bounce"/>
+                    <ArrowDown className="absolute bottom-10 animate-bounce" />
                 </div>
             </div>
         </section>
