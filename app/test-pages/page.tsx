@@ -1,5 +1,6 @@
 "use client";
 import Index from "@/sections";
+import Contact from "@/sections/contact";
 import Nav from "@/components/navbar/nav";
 import { useRef, useEffect, useState } from "react";
 
@@ -37,6 +38,7 @@ export default function Home() {
         <>
             <Nav isVis={isVis} />
             <Index ref={home} />
+            <Contact ref={contact} />
         </>
     );
 }

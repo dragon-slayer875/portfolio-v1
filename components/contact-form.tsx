@@ -91,7 +91,7 @@ export function ContactForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className="text-2xl font-bold">Send
+                <Button type="submit" className="text-2xl w-full font-bold">Send
                 <MailIcon className="ml-2" size={30}  />
                 </Button>
             </form>
