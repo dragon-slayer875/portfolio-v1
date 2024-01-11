@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { ContactForm } from "@/components/contact-form";
-import { Hand, HandIcon } from "lucide-react";
+import { Hand } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const Contact = forwardRef(function (props, ref) {

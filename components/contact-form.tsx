@@ -8,15 +8,13 @@ import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
-    FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MailIcon } from "lucide-react";
+import { Send } from "lucide-react";
 
 const formSchema = z.object({
     name: z.string().min(2, {
@@ -92,7 +90,7 @@ export function ContactForm() {
                     )}
                 />
                 <Button type="submit" className="text-2xl w-full font-bold">Send
-                <MailIcon className="ml-2" size={30}  />
+                <Send className="ml-2" size={25}  />
                 </Button>
             </form>
         </Form>
