@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "../ui/theme-toggle";
+import useIsScroll from "@/lib/custom-hooks/is-scroll";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -12,15 +13,14 @@ const links = [
     { name: "Contact", link: "#Contact" },
 ];
 
-type NavProps = {
-    isVis: string;
-};
-
 const Nav = (NavProps: any) => {
+    const isScrolled = useIsScroll();
+
     return (
         <nav
             className={cn(
-                "fixed backdrop-blur-md z-50 top-0 p-5 w-dvw flex justify-between items-center shadow-sm shadow-primary transition-300",
+                "fixed backdrop-blur-md z-50 top-0 p-5 w-dvw flex justify-between items-center transition-all duration-300",
+                isScrolled ? "shadow-sm shadow-primary" : ""
             )}
         >
             <div>
