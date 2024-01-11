@@ -8,9 +8,9 @@ const Contact = forwardRef(function (props, ref) {
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
             id="Contact"
-            className="p-1 md:p-24 bg-secondary items-center"
+            className="py-12 md:p-24 bg-secondary items-center"
         >
-            <div className="mx-auto container">
+            <div className="container mx-auto ">
                 <div className="grid lg:grid-flow-col lg:grid-cols-3 items-center justify-items-center gap-4">
                     <h1 className="items-center text-4xl font-bold text-foreground flex gap-3">
                         Let's Talk
