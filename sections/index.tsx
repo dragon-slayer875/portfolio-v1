@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { forwardRef } from "react";
 import { Separator } from "@/components/ui/separator";
-import { ArrowDownWideNarrow, ArrowBigDown, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 const Index = forwardRef(function (_props, ref) {
     return (
