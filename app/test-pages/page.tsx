@@ -3,6 +3,7 @@ import Index from "@/sections";
 import Contact from "@/sections/contact";
 import Projects from "@/sections/projects";
 import Nav from "@/components/navbar/nav";
+import { Separator } from "@/components/ui/separator";
 import { useRef, useEffect, useState } from "react";
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
         <>
             <Nav isVis={isVis} />
             <Index ref={home} />
+            <Separator />
             <Projects ref={projects} />
             <Contact ref={contact} />
         </>
