@@ -8,7 +8,7 @@ const Projects = forwardRef(function (_props, ref) {
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
             id="Projects"
-            className="p-1 md:p-24 bg- flex items-center"
+            className="p-1 py-10 md:p-24 bg- flex items-center"
         >
             <div className="container mx-auto">
                 <div className="flex flex-col items-center justify-between mb-12 gap-10">
