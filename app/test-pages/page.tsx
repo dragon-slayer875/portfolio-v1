@@ -9,18 +9,16 @@ import { useRef } from "react";
 
 export default function Home() {
     const home = useRef(null);
-    const skills = useRef(null);
     const projects = useRef(null);
     const contact = useRef(null);
 
     const links = [
-        { name: "Home", link: "#Home", ref: home },
-        { name: "Skills", link: "#Skills", ref: skills },
-        { name: "Projects", link: "#Projects", ref: projects },
-        { name: "Contact", link: "#Contact", ref: contact },
+        { name: "Home", ref: home },
+        { name: "Projects", ref: projects },
+        { name: "Contact", ref: contact },
     ];
 
-    const sections = [home, skills, projects, contact];
+    const sections = [home, projects, contact];
     const isVis = useIsIntersection(sections);
 
     return (

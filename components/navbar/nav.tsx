@@ -24,7 +24,7 @@ export default function Nav(props: NavProps) {
             <div>
                 <h1 className="font-black text-primary text-4xl sm:text-4xl">Rt</h1>
             </div>
-            <div className="hidden lg:grid grid-flow-col grid-cols-4 justify-items-center items-center gap-3">
+            <div className="hidden lg:grid grid-flow-col grid-cols-3 justify-items-center items-center gap-3">
                 {props.links.map((section, index) => (
                     <Button
                         key={index}
