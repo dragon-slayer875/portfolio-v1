@@ -15,12 +15,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
+import sendEmail from "@/lib/email-service";
 
 const formSchema = z.object({
-    name: z.string().min(2, {
+    from_name: z.string().min(2, {
         message: "Name must be at least 2 characters.",
     }),
-    email: z.string().email({
+    reply_to: z.string().email({
         message: "Please enter a valid email.",
     }),
     message: z.string().min(1, {
@@ -33,24 +34,22 @@ export function ContactForm() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: "",
-            email: "",
+            from_name: "",
+            reply_to: "",
             message: "",
         },
     });
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // send email using 
-
-  }
-
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        await console.log(sendEmail(values));
+    }
 
     return (
-        <Form {...form} >
+        <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <FormField
                     control={form.control}
-                    name="name"
+                    name="from_name"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel className="text-2xl">Name</FormLabel>
@@ -62,12 +61,15 @@ export function ContactForm() {
                 />
                 <FormField
                     control={form.control}
-                    name="email"
+                    name="reply_to"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel className="text-2xl">Email</FormLabel>
                             <FormControl>
-                                <Input placeholder="yourmail@example.com" {...field} />
+                                <Input
+                                    placeholder="yourmail@example.com"
+                                    {...field}
+                                />
                             </FormControl>
                         </FormItem>
                     )}
@@ -80,7 +82,7 @@ export function ContactForm() {
                             <FormLabel className="text-2xl">Message</FormLabel>
                             <FormControl>
                                 <Textarea
-                                className="resize-none"
+                                    className="resize-none"
                                     rows={6}
                                     placeholder="Hello, I'd like to chat!"
                                     {...field}
@@ -89,8 +91,9 @@ export function ContactForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className="text-2xl w-full font-bold">Send
-                <Send className="ml-2" size={25}  />
+                <Button type="submit" className="text-2xl w-full font-bold">
+                    Send
+                    <Send className="ml-2" size={25} />
                 </Button>
             </form>
         </Form>
