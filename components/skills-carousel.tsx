@@ -61,7 +61,7 @@ export function CarouselPlugin() {
         {skills.map((skill, index) => (
           <CarouselItem key={index} className="sm:basis-1/2 xl:basis-1/3">
             <div className="p-1">
-              <Card>
+              <Card className="border-none shadow-none">
                 <CardContent className="flex gap-3 items-center justify-center p-2 text-xl">
                   <skill.Icon width="2em" height="2em" />{skill.name}
                 </CardContent>
