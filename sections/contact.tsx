@@ -14,7 +14,7 @@ const Contact = forwardRef(function (props, ref) {
                 <div className="grid lg:grid-flow-col lg:grid-cols-3 items-center justify-items-center gap-4">
                     <h1 className="items-center text-4xl font-bold text-foreground flex gap-3">
                         Let's Talk
-                        <Hand size={30}></Hand>
+                        <Hand size={30} className="animate-wiggle"></Hand>
                     </h1>
                     <Separator
                     orientation="vertical"
