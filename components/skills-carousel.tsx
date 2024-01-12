@@ -1,12 +1,12 @@
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
-import IconNextjs from "@/public/next-logo"
-import IconReactjsFill from "@/public/react"
-import IconTailwindcss from "@/public/tailwind"
-import IconTypescript from "@/public/ts"
-import IconJs from "@/public/js"
-import IconBxlCss3 from "@/public/css3"
-import IconHtml5 from "@/public/html5"
+import IconNextjs from "@/public/icons/next-logo"
+import IconReactjsFill from "@/public//icons/react"
+import IconTailwindcss from "@/public//icons/tailwind"
+import IconTypescript from "@/public/icons/ts"
+import IconJs from "@/public/icons/js"
+import IconBxlCss3 from "@/public/icons/css3"
+import IconHtml5 from "@/public/icons/html5"
 
 const skills = [
   {
