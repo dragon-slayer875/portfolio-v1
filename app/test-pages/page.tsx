@@ -24,7 +24,7 @@ export default function Home() {
     return (
         <>
             <Nav isVis={isVis} links={links} />
-            <Index ref={home} />
+            <Index ref={home} secondSection={projects}/>
             <Separator />
             <Projects ref={projects} />
             <Contact ref={contact} />

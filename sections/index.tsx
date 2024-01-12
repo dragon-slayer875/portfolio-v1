@@ -2,10 +2,11 @@ import Image from "next/image";
 import React from "react";
 import { forwardRef } from "react";
 import { Separator } from "@/components/ui/separator";
-import { CarouselPlugin } from "../components/skills-carousel";
+import { CarouselPlugin } from "@/components/skills-carousel";
 import { ArrowDown } from "lucide-react";
+import scrollTo from "@/lib/scrollTo";
 
-const Index = forwardRef(function (_props, ref) {
+const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDivElement>}, ref) {
     return (
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
@@ -40,7 +41,7 @@ const Index = forwardRef(function (_props, ref) {
                     </div>
                 </div>
                 <div className="flex justify-center items-center mt-8">
-                    <ArrowDown className="absolute bottom-10 animate-bounce" />
+                    <ArrowDown onClick={()=>{scrollTo(props.secondSection)}} className="absolute bottom-10 animate-bounce" />
                 </div>
             </div>
         </section>
