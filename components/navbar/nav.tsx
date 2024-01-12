@@ -22,9 +22,9 @@ export default function Nav(props: NavProps) {
             )}
         >
             <div>
-                <h1 className="font-black text-4xl sm:text-4xl">Rt</h1>
+                <h1 className="font-black text-primary text-4xl sm:text-4xl">Rt</h1>
             </div>
-            <div className="hidden lg:grid grid-flow-col grid-cols-5 justify-items-center jus items-center gap-3">
+            <div className="hidden lg:grid grid-flow-col grid-cols-4 justify-items-center jus items-center gap-3">
                 {props.links.map((section, index) => (
                     <Button
                         key={index}
@@ -45,7 +45,7 @@ export default function Nav(props: NavProps) {
                 <ThemeToggle />
                 <MobileNav links={props.links} />
             </div>
-            <div className="hidden md:flex gap-1">
+            <div className="hidden lg:flex gap-1">
                 <ThemeToggle />
             </div>
         </nav>
