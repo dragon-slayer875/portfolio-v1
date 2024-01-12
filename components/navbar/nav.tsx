@@ -1,19 +1,17 @@
 import React from "react";
-import Link from "next/link";
+import { Button } from "../ui/button";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "../ui/theme-toggle";
 import useIsScroll from "@/lib/custom-hooks/is-scroll";
+import scrollTo from "@/lib/scrollTo";
 import { cn } from "@/lib/utils";
 
-const links = [
-    { name: "Home", link: "#Home" },
-    { name: "Skills", link: "#Skills" },
-    { name: "Projects", link: "#Projects" },
-    { name: "About", link: "#About" },
-    { name: "Contact", link: "#Contact" },
-];
+type NavProps = {
+    links: any[];
+    isVis: string;
+};
 
-const Nav = (NavProps: any) => {
+export default function Nav(props: NavProps) {
     const isScrolled = useIsScroll();
 
     return (
@@ -26,25 +24,26 @@ const Nav = (NavProps: any) => {
             <div>
                 <h1 className="font-black text-4xl sm:text-4xl">Rt</h1>
             </div>
-            <div className="hidden md:grid grid-flow-col grid-cols-5 justify-items-center jus items-center gap-3">
-                {links.map((link, index) => (
-                    <Link
+            <div className="hidden lg:grid grid-flow-col grid-cols-5 justify-items-center jus items-center gap-3">
+                {props.links.map((section, index) => (
+                    <Button
                         key={index}
-                        href={link.link}
+                        onClick={() => scrollTo(section.ref)}
+                        variant={"ghost"}
                         className={`font-medium w-full py-1 px-3 mx-1 hover:shadow-[0_0_0_0.1rem_hsl(var(primary))] shadow-primary text-lg text-center rounded-3xl transition-300
                         ${
-                            NavProps.isVis === link.name
-                                ? "bg-primary text-background"
+                            props.isVis === section.name
+                                ? "bg-primary text-background hover:bg-primary hover:text-background"
                                 : ""
                         }`}
                     >
-                        {link.name}
-                    </Link>
+                        {section.name}
+                    </Button>
                 ))}
             </div>
-            <div className="flex items-center gap-1 md:hidden">
+            <div className="flex items-center gap-1 lg:hidden">
                 <ThemeToggle />
-                <MobileNav links={links} />
+                <MobileNav links={props.links} />
             </div>
             <div className="hidden md:flex gap-1">
                 <ThemeToggle />
@@ -53,4 +52,3 @@ const Nav = (NavProps: any) => {
     );
 };
 
-export default Nav;

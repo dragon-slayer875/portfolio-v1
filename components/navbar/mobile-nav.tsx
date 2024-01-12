@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import scrollTo from "@/lib/scrollTo";
 import {
     Sheet,
     SheetClose,
@@ -39,13 +39,14 @@ export const MobileNav = (props: MobileNavProps) => {
                 </SheetHeader>
                 <div className="flex flex-col items-end tall:h-full tall:py-20 tall:justify-between">
                     {props.links.map((link, index) => (
-                        <Link
+                        <Button
+                        variant={"ghost"}
                             key={index}
-                            href={link.link}
+                            onClick={() => scrollTo(link.ref)}
                             className="font-bold p-5 text-4xl text-primary"
                         >
                             {link.name}
-                        </Link>
+                        </Button>
                     ))}
                 </div>
                 <SheetFooter>
