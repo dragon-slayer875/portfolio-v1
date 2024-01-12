@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { forwardRef } from "react";
 import { Separator } from "@/components/ui/separator";
+import { CarouselPlugin } from "../components/skills-carousel";
 import { ArrowDown } from "lucide-react";
 
 const Index = forwardRef(function (_props, ref) {
@@ -35,6 +36,7 @@ const Index = forwardRef(function (_props, ref) {
                             intuitive, pixel-perfect user interfaces with
                             efficient and modern backends.
                         </p>
+                        <CarouselPlugin />
                     </div>
                 </div>
                 <div className="flex justify-center items-center mt-8">
