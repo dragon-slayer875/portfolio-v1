@@ -48,14 +48,14 @@ import {
 
 export function CarouselPlugin() {
   const plugin = React.useRef(
-    Autoplay({ delay: 1000, stopOnInteraction: true })
+    Autoplay({ delay: 1000, stopOnInteraction: false })
   )
 
   return (
     <Carousel
       plugins={[plugin.current]}
       className="w-full max-w-sm self-center xl:self-start sm:max-w-md md:max-w-xl"
-      opts={{loop: true, dragFree: true}}
+      opts={{loop: true}}
     >
       <CarouselContent className="items-center">
         {skills.map((skill, index) => (

@@ -22,7 +22,7 @@ const Index = forwardRef(function (_props, ref) {
                         className="object-cover w-[55dvw] md:w-[40dvw] lg:w-[30dvw] xl:max-w-[25dvw] h-auto aspect-square shadow-[-1.5rem_1.5rem_0_0_hsl(var(--primary))]"
                     />
                     <div className="text-center flex flex-col gap-1 lg:gap-6 lg:text-left lg:max-w-[40dvw]">
-                        <div className="text-xl md:text-2xl text-foreground">
+                        <div className="mb-3 md:!mb-0 text-xl md:text-2xl text-foreground">
                             SOFTWARE ENGINEER
                         </div>
                         <h1 className="font-bold text-4xl md:text-5xl text-foreground">
