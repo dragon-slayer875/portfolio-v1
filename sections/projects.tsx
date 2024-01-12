@@ -1,9 +1,9 @@
 import { ProjectCard } from "@/components/project-card";
 import Image from "next/image";
-import React from "react";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
+import projects from "@/public/data/projects.json";
 
-const Projects = forwardRef(function (_props, ref) {
+const Projects = forwardRef(function (props, ref) {
     return (
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
@@ -18,10 +18,17 @@ const Projects = forwardRef(function (_props, ref) {
                         Here are some of my projects
                     </p>
                     </div>
-                    <div className="flex flex-col  md:!flex-row justify-center items-center w-full gap-5">
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
+                    <div className="flex flex-col lg:!flex-row flex-wrap justify-center items-center w-full gap-5">
+                        {projects["projects"].map((project, index) => (
+                            <ProjectCard
+                                key={index}
+                                title={project.title}
+                                description={project.description}
+                                github_link={project.github}
+                                live_link={project.live}
+                                image={project.image}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,35 @@
+{
+    "projects": [
+        {
+            "title": "NextJs Portfolio",
+            "description": "A portfolio website built with NextJs and TailwindCSS in TypeScript",
+            "github": "https://github.com/dragon-slayer875/portfolio-v1",
+            "live": "/",
+            "technologies": ["NextJs", "TailwindCSS", "TypeScript"],
+            "image": "/images/portfolio.png"
+        },
+        {
+            "title": "Chat app",
+            "description": "A chat app built with React, NodeJs, Express and ChatEngine.io",
+            "github": "https://github.com/dragon-slayer875/chat-app-for-gfg",
+            "technologies": ["React", "NodeJs", "Express", "ChatEngine.io"],
+            "image": "/images/chat-app.png"
+        },
+        {
+            "title": "Tic-Tac-Toe",
+            "description": "A tic-tac-toe game built with HTML, CSS and JavaScript",
+            "github": "https://github.com/dragon-slayer875/tic-tac-toe",
+            "live": "https://dragon-slayer875.github.io/tic-tac-toe/",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "image": "/images/tic-tac-toe.png"
+        },
+        {
+            "title": "Calculator",
+            "description": "A calculator built with HTML, CSS and JavaScript",
+            "github": "https://github.com/dragon-slayer875/calculator",
+            "live": "https://dragon-slayer875.github.io/calculator/",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "image": "/images/calculator.png"
+        }
+    ]
+}

@@ -16,37 +16,48 @@ import Link from "next/link"
 type ProjectCardProps = {
   title: string
   description: string
-  github_href: string
-  live_href: string
+  github_link: string
+  live_link: string | null
+  image: string
 }
 
 export function ProjectCard( ProjectCardProps: any ) {
   return (
-    <Card className="w-[85dvw] md:w-[35dvw]">
+    <Card className="w-[85dvw] sm:w-[70dvw] md:w-[60dvw] lg:w-[35dvw] lg:max-w-[35dvw] 2xl:max-w-[30dvw]">
       <CardHeader>
-        <CardTitle>{ProjectCardProps.title+ "cde"}</CardTitle>
-        <CardDescription>{ProjectCardProps.description + "abe"}</CardDescription>
+        <CardTitle>{ProjectCardProps.title}</CardTitle>
+        <CardDescription>{ProjectCardProps.description}</CardDescription>
       </CardHeader>
       <CardContent>
         <Image
-          src="/images/nextjs.svg"
+          src={ProjectCardProps.image}
           alt="Next.js Logo"
-          width={120}
-          height={120}
-          className=""
+          width={500}
+          height={500}
+          className=" object-contain w-full"
         />
         </CardContent>
       <CardFooter className="flex justify-between">
-        <Link href={ProjectCardProps.github_href+"b"}>
-        <Button variant="outline">Github
-          <Github className="ml-2" size={16} />
-        </Button>
-        </Link>
-        <Link href={ProjectCardProps.live_href+"a"}>
-        <Button>Live
-          <ExternalLink className="ml-2" size={16} />
-        </Button>
-        </Link>
+        {ProjectCardProps.github_link && (
+          <Link href={ProjectCardProps.github_link}>
+            <Button
+            variant={"secondary"}
+            >
+              <span>Github</span>
+              <Github className="ml-2" size={16} />
+            </Button>
+          </Link>
+        )}
+        {ProjectCardProps.live_link && (
+          <Link href={ProjectCardProps.live_link}>
+            <Button
+            >
+              <span>Live</span>
+              <ExternalLink className="ml-2" size={16} />
+            </Button>
+          </Link>
+        )}
+        
       </CardFooter>
     </Card>
   )
