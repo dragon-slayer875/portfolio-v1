@@ -23,7 +23,7 @@ type ProjectCardProps = {
 
 export function ProjectCard( ProjectCardProps: any ) {
   return (
-    <Card className="w-[85dvw] sm:w-[70dvw] md:w-[60dvw] lg:w-[35dvw] lg:max-w-[35dvw] 2xl:max-w-[30dvw]">
+    <Card className="flex flex-col justify-between h-full w-[85dvw] sm:w-[70dvw] md:w-[60dvw] lg:w-[35dvw] lg:max-w-[35dvw] 2xl:max-w-[34dvw]">
       <CardHeader>
         <CardTitle>{ProjectCardProps.title}</CardTitle>
         <CardDescription>{ProjectCardProps.description}</CardDescription>

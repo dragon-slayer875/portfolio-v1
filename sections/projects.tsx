@@ -18,7 +18,7 @@ const Projects = forwardRef(function (props, ref) {
                         Here are some of my projects
                     </p>
                     </div>
-                    <div className="flex flex-col lg:!flex-row flex-wrap justify-center items-center w-full gap-5">
+                    <div className="grid justify-items-center lg:grid-cols-2 lg:grid justify-center items-center w-full gap-6">
                         {projects["projects"].map((project, index) => (
                             <ProjectCard
                                 key={index}
