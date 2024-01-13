@@ -63,7 +63,7 @@ export function CarouselPlugin() {
             <div className="p-1">
               <Card className="border-none shadow-none">
                 <CardContent className="flex gap-3 items-center justify-center p-2 text-xl">
-                  <skill.Icon width="2em" height="2em" />{skill.name}
+                  <skill.Icon width="40px" height="40px" />{skill.name}
                 </CardContent>
               </Card>
             </div>

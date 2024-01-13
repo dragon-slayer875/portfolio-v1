@@ -27,9 +27,9 @@ const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDi
                             SOFTWARE ENGINEER
                         </div>
                         <h1 className="font-bold text-4xl md:text-5xl text-foreground">
-                            Hello, my name is Rudraksh Tyagi
+                            Hello, my name is <span className="text-primary">Rudraksh Tyagi</span>
                         </h1>
-                        <Separator className="my-4 md:max-xl:my-2 2xl:max-w-[35dvw] bg-primary" />
+                        <Separator className="my-4 md:max-xl:my-2 2xl:max-w-[35dvw] bg-foreground" />
                         <p className="font-light hidden lg:block text-xl lg:max-w-[40dvw] xl:max-w-[37dvw] 2xl:max-w-[35dvw]">
                             I am a software engineer based in India. I enjoy
                             building things that live on the internet. I develop
