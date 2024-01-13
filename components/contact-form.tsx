@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ButtonOpStatus } from "@/components/ui/button-op-status";
 import { Send } from "lucide-react";
 import sendEmail from "@/lib/email-service";
 
@@ -30,7 +32,8 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
-    // ...
+    const [status, setStatus] = useState("idle");
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -41,7 +44,24 @@ export function ContactForm() {
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        await console.log(sendEmail(values));
+        setStatus("loading");
+        await sendEmail(values)
+            .then((res) => {
+                if (res.status === 200) {
+                    setStatus("success");
+                } else {
+                    setStatus("error");
+                }
+            })
+            .catch((err) => {
+                setStatus("error");
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setStatus("idle");
+                    form.resetField("message")
+                }, 2000);
+            });
     }
 
     return (
@@ -91,10 +111,7 @@ export function ContactForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className="text-2xl w-full font-bold">
-                    Send
-                    <Send className="ml-2" size={25} />
-                </Button>
+                <ButtonOpStatus status={status} />
             </form>
         </Form>
     );
