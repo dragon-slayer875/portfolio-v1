@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { MobileNav } from "./mobile-nav";
 import { ThemeToggle } from "../ui/theme-toggle";
 import useIsScroll from "@/lib/custom-hooks/is-scroll";
-import scrollTo from "@/lib/scrollTo";
+import scrollTo from "@/lib/scroll-to";
 import { cn } from "@/lib/utils";
 
 type NavProps = {

@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { Separator } from "@/components/ui/separator";
 import { CarouselPlugin } from "@/components/skills-carousel";
 import { ArrowDown } from "lucide-react";
-import scrollTo from "@/lib/scrollTo";
+import scrollTo from "@/lib/scroll-to";
 
 const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDivElement>}, ref) {
     return (

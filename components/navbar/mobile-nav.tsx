@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import scrollTo from "@/lib/scrollTo";
+import scrollTo from "@/lib/scroll-to";
 import {
     Sheet,
     SheetClose,
