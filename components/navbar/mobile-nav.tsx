@@ -22,7 +22,7 @@ export const MobileNav = (props: MobileNavProps) => {
     return (
         <Sheet key={"right"}>
             <SheetTrigger asChild>
-                <Button className="p-2" variant={"ghost"}>
+                <Button aria-label="Navigation Menu" className="p-2" variant={"ghost"}>
                     <div className="flex flex-col gap-1 justify-center items-center">
                         <GenericHamburgerLine />
                         <GenericHamburgerLine />
