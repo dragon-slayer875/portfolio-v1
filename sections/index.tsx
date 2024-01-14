@@ -6,7 +6,10 @@ import { CarouselPlugin } from "@/components/skills-carousel";
 import { ArrowDown } from "lucide-react";
 import scrollTo from "@/lib/scroll-to";
 
-const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDivElement>}, ref) {
+const Index = forwardRef(function (
+    props: { secondSection: React.RefObject<HTMLDivElement> },
+    ref
+) {
     return (
         <section
             ref={ref as React.RefObject<HTMLDivElement> | null}
@@ -16,6 +19,7 @@ const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDi
             <div className="container mx-auto">
                 <div className="lg:max-xl:p-4 flex flex-col lg:!flex-row-reverse justify-between items-center gap-14">
                     <Image
+                        priority
                         width={400}
                         height={400}
                         src="/portrait.png"
@@ -27,7 +31,8 @@ const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDi
                             SOFTWARE ENGINEER
                         </div>
                         <h1 className="font-bold text-4xl md:text-5xl text-foreground">
-                            Hello, my name is <span className="text-primary">Rudraksh Tyagi</span>
+                            Hello, my name is{" "}
+                            <span className="text-primary">Rudraksh Tyagi</span>
                         </h1>
                         <Separator className="my-4 md:max-xl:my-2 2xl:max-w-[35dvw] bg-foreground" />
                         <p className="font-light hidden lg:block text-xl lg:max-w-[40dvw] xl:max-w-[37dvw] 2xl:max-w-[35dvw]">
@@ -41,7 +46,12 @@ const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDi
                     </div>
                 </div>
                 <div className="flex justify-center items-center mt-8">
-                    <ArrowDown onClick={()=>{scrollTo(props.secondSection)}} className="absolute bottom-10 animate-bounce cursor-pointer" />
+                    <ArrowDown
+                        onClick={() => {
+                            scrollTo(props.secondSection);
+                        }}
+                        className="absolute bottom-10 animate-bounce cursor-pointer"
+                    />
                 </div>
             </div>
         </section>
