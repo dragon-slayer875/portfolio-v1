@@ -41,7 +41,7 @@ const Index = forwardRef(function (props: {secondSection: React.RefObject<HTMLDi
                     </div>
                 </div>
                 <div className="flex justify-center items-center mt-8">
-                    <ArrowDown onClick={()=>{scrollTo(props.secondSection)}} className="absolute bottom-10 animate-bounce" />
+                    <ArrowDown onClick={()=>{scrollTo(props.secondSection)}} className="absolute bottom-10 animate-bounce cursor-pointer" />
                 </div>
             </div>
         </section>
