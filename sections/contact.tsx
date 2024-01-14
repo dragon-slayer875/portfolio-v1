@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { ContactForm } from "@/components/contact-form";
-import { Hand, Instagram, Linkedin } from "lucide-react";
+import { Hand, Github, Linkedin } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -21,11 +21,13 @@ const Contact = forwardRef(function (props, ref) {
                         </h1>
                         <Separator className=" basis-full bg-foreground shrink-0 grow" />
                         <div className="flex gap-4">
-                            <Link href="https://www.instagram.com/rudrakshtyagi875_"
+                            <Link href="https://github.com/dragon-slayer875"
+                            aria-label="Github Profile"
                             target="_blank">
-                                <Instagram size={30} />
+                                <Github size={30} />
                             </Link>
                             <Link href="https://www.linkedin.com/in/rudrakshtyagi875/"
+                            aria-label="Linkedin Profile"
                             target="_blank">
                                 <Linkedin size={30} />
                             </Link>
