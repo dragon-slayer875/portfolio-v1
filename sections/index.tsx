@@ -30,7 +30,7 @@ const Index = forwardRef(function (
                         <div className="mb-3 md:!mb-0 text-xl md:text-2xl text-foreground">
                             SOFTWARE ENGINEER
                         </div>
-                        <h1 className="font-bold text-4xl md:text-5xl text-foreground">
+                        <h1 className="font-bold text-4xl md:text-5xl text-foreground md:!leading-[1.3]">
                             Hello, my name is{" "}
                             <span className="text-primary">Rudraksh Tyagi</span>
                         </h1>
