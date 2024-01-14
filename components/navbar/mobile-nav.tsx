@@ -34,10 +34,10 @@ export const MobileNav = (props: MobileNavProps) => {
                 className="flex flex-col justify-between"
                 side={"right"}
             >
-                <SheetHeader>
+                <SheetHeader className=" items-center">
                     <SheetTitle>Navigation</SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col items-end tall:h-full tall:py-20 tall:justify-between">
+                <div className="flex flex-col items-end tall:h-full tall:py-40 tall:justify-between">
                     {props.links.map((link, index) => (
                         <Button
                         variant={"ghost"}
