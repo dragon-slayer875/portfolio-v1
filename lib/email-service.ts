@@ -4,10 +4,10 @@ export default async function sendEmail(
     variables: Record<string, string>,
     ) {
     const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        process.env.EMAILJS_SERVICE_ID!,
+        process.env.EMAILJS_TEMPLATE_ID!,
         variables,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY!,
+        process.env.PUBLIC_KEY!,
     ).then((res) => {
         return res})
     .catch((err) => {
