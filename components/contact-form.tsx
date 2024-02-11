@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { useState } from "react";
 
-import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
@@ -16,8 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ButtonOpStatus } from "@/components/ui/button-op-status";
-import { Send } from "lucide-react";
-import sendEmail from "@/lib/email-service";
+import sendContactForm from "@/lib/email-service";
 
 const formSchema = z.object({
     from_name: z.string().min(2, {
@@ -45,16 +43,17 @@ export function ContactForm() {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         setStatus("loading");
-        await sendEmail(values)
+        
+        await sendContactForm(values)
             .then((res) => {
-                if (res.status === 200) {
+                if (res === 200) {
                     setStatus("success");
                 } else {
                     setStatus("error");
                 }
             })
             .catch((err) => {
-                setStatus("error");
+                setStatus(err);
             })
             .finally(() => {
                 setTimeout(() => {

@@ -1,24 +1,19 @@
-import emailjs from '@emailjs/browser'
-
-export default async function sendEmail(
-    variables: Record<string, string>,
-    ) {
-    const response = await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID!,
-        process.env.EMAILJS_TEMPLATE_ID!,
-        variables,
-        process.env.PUBLIC_KEY!,
-    ).then((res) => {
-        return res})
-    .catch((err) => {
-        return err}
-    )
-    
-    return response
-    }
-
-//     emailjs.send("service_9vpw7e4","template_fh5kdvc",{
-// from_name: "hehehe",
-// reply_to: "hehe",
-// message: "he",
-// });
+export default async function sendContactForm(
+    variables: Record<string, string>
+) {
+    const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(variables),
+    })
+        .then((res) => {            
+            return res.status;
+        })
+        .catch((err) => {
+            return err;
+        });
+        
+    return response;
+}
