@@ -22,7 +22,7 @@ const Index = forwardRef(function (
                         priority
                         width={400}
                         height={400}
-                        src="/portrait.png"
+                        src="/portrait.jpg"
                         alt="Portrait, Rudraksh Tyagi"
                         className="object-cover w-[55dvw] md:w-[40dvw] lg:w-[30dvw] xl:max-w-[25dvw] h-auto aspect-square shadow-[-1.5rem_1.5rem_0_0_hsl(var(--primary))]"
                     />
