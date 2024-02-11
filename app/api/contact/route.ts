@@ -12,15 +12,19 @@ export async function POST(request: Request) {
             subject: `New message from ${mail_vals.from_name}`,
             react: EmailTemplate({
                 firstName: mail_vals.from_name,
+                email: mail_vals.reply_to,
             }) as React.ReactElement,
         });
 
         if (error) {
+            console.log(error);
+            
             return Response.json({ error });
         }
-
-        return Response.json({ mail_vals });
+        console.log(data);
+        return Response.json({ data });
     } catch (error) {
+        console.log(error);
         return Response.json({ error });
     }
 }
