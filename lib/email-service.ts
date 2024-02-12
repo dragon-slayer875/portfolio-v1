@@ -1,7 +1,7 @@
 export default async function sendContactForm(
     variables: Record<string, string>
 ) {
-    const response: any = await fetch("/api/contact2", {
+    const response: any = await fetch("/api/contact", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
