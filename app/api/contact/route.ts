@@ -22,17 +22,12 @@ export async function POST(request: Request) {
             to: ["rudraksh875@gmail.com"],
             subject: `New message from ${mail_vals.from_name}`,
              html: `<p>Hi!<br>Name: ${mail_vals.from_name},<br>Email: ${mail_vals.reply_to}<br>Message: ${mail_vals.message}</p>` 
-            //  "<strong>it works!</strong>",
         }),
     });
 
     if (res.ok) {
-        const data = await res.json();
-        console.log(data);
-        
-        return NextResponse.json(data);
+        return NextResponse.json(res);
     } else {
-        console.log(res.status, res.statusText);
         return NextResponse.error();
     }
 }
