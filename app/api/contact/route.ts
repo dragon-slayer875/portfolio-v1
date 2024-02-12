@@ -18,7 +18,7 @@ export async function POST(request: Request) {
             Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-            from: "Acme <onboarding@resend.dev>",
+            from: "Portfolio Message <onboarding@resend.dev>",
             to: ["rudraksh875@gmail.com"],
             subject: `New message from ${mail_vals.from_name}`,
              html: `<p>Hi!<br>Name: ${mail_vals.from_name},<br>Email: ${mail_vals.reply_to}<br>Message: ${mail_vals.message}</p>` 
