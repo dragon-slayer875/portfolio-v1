@@ -25,17 +25,19 @@ export async function POST(request: Request) {
         if (error) {
             console.log(error);
             console.log(process.env.RESEND_API_KEY);
+            console.log(mail_vals);
+            
 
             return Response.json({ error });
         }
         console.log(process.env.RESEND_API_KEY);
         console.log(data);
-
+        console.log(mail_vals);
+        
         return Response.json({ data });
     } catch (error) {
         console.log(error);
         console.log(process.env.RESEND_API_KEY);
-
         return Response.json({ error });
     }
 }
